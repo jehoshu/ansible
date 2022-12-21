@@ -1,0 +1,13 @@
+---
+- hosts: mygroup
+  
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+   
+  tasks:
+    - name: show ip
+      shell: ip a
+      register: the_ip
+    - name: Print directory contents using loops
+      debug:
+        msg: "{{ the_ip }}"
